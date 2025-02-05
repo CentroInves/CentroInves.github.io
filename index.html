@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Asistencia</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Incluir las librerías necesarias -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.30/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Registro de Asistencia</h1>
+        <input type="text" id="nombre" placeholder="Nombre">
+        <input type="text" id="apellido" placeholder="Apellido">
+        <button onclick="registrar('entrada')">Marcar Entrada</button>
+        <button onclick="registrar('salida')">Marcar Salida</button>
+        <button onclick="tomarFoto()">Tomar Foto</button>
+        <button onclick="eliminarRegistros()">Borrar Registros</button>
+        <button onclick="exportarExcel()">Exportar a Excel</button>
+        <button onclick="exportarImagen()">Exportar a Imagen</button>
+        <button onclick="exportarPDF()">Exportar a PDF</button>
+        <p id="ubicacion"></p>
+
+        <video id="video" autoplay></video>
+        <canvas id="canvas"></canvas>
+
+        <table id="tabla">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Fecha</th>
+                    <th>Entrada</th>
+                    <th>Salida</th>
+                    <th>Ubicación</th>
+                    <th>Foto</th>
+                </tr>
+            </thead>
+            <tbody id="registros"></tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
